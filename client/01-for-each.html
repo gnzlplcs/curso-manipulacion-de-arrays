@@ -1,22 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div id="app"></div>
+
+  <div id="reto"></div>
   <script>
-    const products = [
-      { title: 'Burger', price: 25 },
-      { title: 'Pizza', price: 40 }
+    const products = [{
+        title: 'Burger',
+        price: 25
+      },
+      {
+        title: 'Pizza',
+        price: 40
+      }
     ];
     const app = document.getElementById('app');
     products.forEach(item => {
       app.innerHTML += `<li>${item.title}... ${item.price}</li>`
     });
+
+    // reto: renderizar una lista de tareas con forEach
+    const reto = document.getElementById('reto');
+    
+    const tasks = [{
+        task: '10 minutos de lectura',
+        status: 'completed',
+        repeat: true
+      },
+      {
+        task: 'tomar curso de intro a node.js',
+        status: 'ongoing',
+        repeat: false
+      },
+      {
+        task: 'hacer reto de forEach',
+        status: 'completed',
+        repeat: false
+      },
+      {
+        task: 'bañar al perro',
+        status: 'incompleted',
+        repeat: true
+      },
+      {
+        task: 'bañarme',
+        status: 'incompleted',
+        repeat: true
+      }
+    ];
+
+    tasks.forEach(t => {
+      reto.innerHTML += `
+        <div>
+          <input type="checkbox" id="${t.task}" name="${t.task}">
+          <label for="${t.task}">${t.task} | status: ${t.status} | ¿se repite?: ${t.repeat}</label>
+        </div>
+      `
+    });
   </script>
 </body>
+
 </html>
