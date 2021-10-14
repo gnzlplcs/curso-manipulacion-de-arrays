@@ -55,7 +55,7 @@ const rta2 = data
     return obj;
   }, {});
 
-// console.log(rta2)
+console.log(rta2)
 
 const rta3 = data.map(item => item.level)
 // console.log(rta3)
@@ -77,4 +77,4 @@ const result = arr.reduce((obj, item) => {
   '9-10': 0
 })
 
-console.log(result)
+// console.log(result)
